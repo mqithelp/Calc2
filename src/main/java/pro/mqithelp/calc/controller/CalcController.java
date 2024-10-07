@@ -18,7 +18,8 @@ public class CalcController {
     }
 
     @GetMapping(path = "/plus")
-    String plus(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
+    String plus(@RequestParam(value = "num1", required = true) Integer num1,
+                @RequestParam(value = "num2", required = true) Integer num2) {
         return ariphmeticCalc.plus(num1, num2);
     }
 

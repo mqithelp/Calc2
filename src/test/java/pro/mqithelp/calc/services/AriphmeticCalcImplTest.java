@@ -10,9 +10,11 @@ class AriphmeticCalcImplTest {
     Integer num0;
     Integer num1;
     Integer num2;
+    AriphmeticCalc ariphmeticCalc;
 
     @BeforeEach
     void setUp() {
+        ariphmeticCalc = new AriphmeticCalcImpl();
         num0 = 0;
         num1 = 5;
         num2 = 2;
@@ -20,31 +22,26 @@ class AriphmeticCalcImplTest {
 
     @Test
     void plus() {
-        AriphmeticCalcImpl ariphmeticCalc = new AriphmeticCalcImpl();
         Assertions.assertEquals(ariphmeticCalc.plus(num1, num2), num1 + num2);
     }
 
     @Test
     void minus() {
-        AriphmeticCalcImpl ariphmeticCalc = new AriphmeticCalcImpl();
         Assertions.assertEquals(ariphmeticCalc.minus(num1, num2), num1 - num2);
     }
 
     @Test
     void multiply() {
-        AriphmeticCalcImpl ariphmeticCalc = new AriphmeticCalcImpl();
         Assertions.assertEquals(ariphmeticCalc.multiply(num1, num2), num1 * num2);
     }
 
     @Test
     void divide() {
-        AriphmeticCalcImpl ariphmeticCalc = new AriphmeticCalcImpl();
         Assertions.assertEquals(ariphmeticCalc.divide(num1, num2), (double) num1 / num2);
     }
 
     @Test
     void divideByZero() {
-        AriphmeticCalcImpl ariphmeticCalc = new AriphmeticCalcImpl();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             ariphmeticCalc.divide(num1, num0);
         });
